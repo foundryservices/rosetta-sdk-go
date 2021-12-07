@@ -18,8 +18,8 @@ import (
 	"crypto/ed25519"
 	"fmt"
 
-	"github.com/coinbase/rosetta-sdk-go/asserter"
-	"github.com/coinbase/rosetta-sdk-go/types"
+	"github.com/foundryservices/rosetta-sdk-go/asserter"
+	"github.com/foundryservices/rosetta-sdk-go/types"
 )
 
 // SignerEdwards25519 is initialized from a keypair

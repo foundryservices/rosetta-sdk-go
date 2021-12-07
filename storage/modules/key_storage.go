@@ -20,11 +20,11 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/coinbase/rosetta-sdk-go/keys"
-	"github.com/coinbase/rosetta-sdk-go/storage/database"
-	storageErrs "github.com/coinbase/rosetta-sdk-go/storage/errors"
-	"github.com/coinbase/rosetta-sdk-go/types"
-	"github.com/coinbase/rosetta-sdk-go/utils"
+	"github.com/foundryservices/rosetta-sdk-go/keys"
+	"github.com/foundryservices/rosetta-sdk-go/storage/database"
+	storageErrs "github.com/foundryservices/rosetta-sdk-go/storage/errors"
+	"github.com/foundryservices/rosetta-sdk-go/types"
+	"github.com/foundryservices/rosetta-sdk-go/utils"
 )
 
 // WARNING: KEY STORAGE USING THIS PACKAGE IS NOT SECURE!!!! ONLY USE

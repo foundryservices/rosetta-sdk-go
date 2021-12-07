@@ -19,9 +19,9 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/coinbase/rosetta-sdk-go/constructor/job"
-	"github.com/coinbase/rosetta-sdk-go/storage/database"
-	"github.com/coinbase/rosetta-sdk-go/storage/errors"
+	"github.com/foundryservices/rosetta-sdk-go/constructor/job"
+	"github.com/foundryservices/rosetta-sdk-go/storage/database"
+	"github.com/foundryservices/rosetta-sdk-go/storage/errors"
 )
 
 const (
