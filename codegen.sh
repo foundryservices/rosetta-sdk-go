@@ -52,15 +52,13 @@ done
 
 rm -rf tmp;
 
-# Download spec file from releases
-ROSETTA_SPEC_VERSION=1.4.10
-curl -L https://github.com/coinbase/rosetta-specifications/releases/download/v${ROSETTA_SPEC_VERSION}/api.json -o api.json;
+ROSETTA_SPEC_VERSION=1.4.10+
 
 # Generate client + types code
 GENERATOR_VERSION=v4.3.0
 docker run --user "$(id -u):$(id -g)" --rm -v "${PWD}":/local \
   openapitools/openapi-generator-cli:${GENERATOR_VERSION} generate \
-  -i /local/api.json \
+  -i /local/rosetta-api-spec.json \
   -g go \
   -t /local/templates/client \
   --additional-properties packageName=client\
@@ -84,7 +82,7 @@ rm -rf client_tmp;
 # Add server code
 docker run --user "$(id -u):$(id -g)" --rm -v "${PWD}":/local \
   openapitools/openapi-generator-cli:${GENERATOR_VERSION} generate \
-  -i /local/api.json \
+  -i /local/rosetta-api-spec.json \
   -g go-server \
   -t /local/templates/server \
   --additional-properties packageName=server\
@@ -104,9 +102,6 @@ rm -f server_tmp/model_*.go
 rm -f server_tmp/*_service.go
 mv server_tmp/* server;
 rm -rf server_tmp;
-
-# Remove spec file
-rm -f api.json;
 
 # Fix linting issues
 sed "${SED_IFLAG[@]}" 's/Api/API/g' client/* server/*;
