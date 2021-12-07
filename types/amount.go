@@ -21,7 +21,12 @@ package types
 type Amount struct {
 	// Value of the transaction in atomic units represented as an arbitrary-sized signed integer.
 	// For example, 1 BTC would be represented by a value of 100000000.
-	Value    string                 `json:"value"`
-	Currency *Currency              `json:"currency"`
-	Metadata map[string]interface{} `json:"metadata,omitempty"`
+	Value string `json:"value"`
+	// The total delegated portion of the Value on a validator. Null if account is not a validator.
+	DelegatedValue *string `json:"delegated_value,omitempty"`
+	// A list of delegators for a given validator and the value delegated. Null if account is not a
+	// validator.
+	Delegators []*Delegator           `json:"delegators,omitempty"`
+	Currency   *Currency              `json:"currency"`
+	Metadata   map[string]interface{} `json:"metadata,omitempty"`
 }
