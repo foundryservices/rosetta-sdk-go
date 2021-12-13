@@ -27,7 +27,6 @@ type Amount struct {
 	// A list of delegators for a given validator and the value delegated. Null if account is not a
 	// validator.
 	Delegators []*Delegator           `json:"delegators,omitempty"`
-	Decimals   *int64                 `json:"decimals,omitempty"`
 	Currency   *Currency              `json:"currency"`
 	Metadata   map[string]interface{} `json:"metadata,omitempty"`
 }
