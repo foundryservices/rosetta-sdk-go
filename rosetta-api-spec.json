@@ -1151,6 +1151,11 @@
                             "$ref": "#/components/schemas/Delegator"
                         }
                     },
+                    "decimals": {
+                        "type": "integer",
+                        "format": "int64",
+                        "example": 8
+                    },
                     "currency": {
                         "$ref": "#/components/schemas/Currency"
                     },
