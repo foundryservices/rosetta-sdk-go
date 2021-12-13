@@ -1151,11 +1151,6 @@
                             "$ref": "#/components/schemas/Delegator"
                         }
                     },
-                    "decimals": {
-                        "type": "integer",
-                        "format": "int64",
-                        "example": 8
-                    },
                     "currency": {
                         "$ref": "#/components/schemas/Currency"
                     },
@@ -1184,6 +1179,11 @@
                     "delegated_value": {
                         "description": "Value of the delegated wallet transactions.",
                         "type": "string"
+                    },
+                    "decimals": {
+                        "type": "integer",
+                        "format": "int64",
+                        "example": 8
                     }
                 }
             },

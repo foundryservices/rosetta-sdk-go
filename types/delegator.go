@@ -24,4 +24,5 @@ type Delegator struct {
 	Value string `json:"value"`
 	// Value of the delegated wallet transactions.
 	DelegatedValue string `json:"delegated_value"`
+	Decimals       *int64 `json:"decimals,omitempty"`
 }
