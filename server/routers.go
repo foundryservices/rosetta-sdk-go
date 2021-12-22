@@ -61,8 +61,11 @@ func CorsMiddleware(next http.Handler) http.Handler {
 }
 
 // NewRouter creates a new router for any number of api routers
-func NewRouter(routers ...Router) http.Handler {
-	router := mux.NewRouter().StrictSlash(true)
+func NewRouter(r *mux.Router, routers ...Router) http.Handler {
+	if r == nil {
+		r = mux.NewRouter()
+	}
+	router := r.StrictSlash(true)
 	for _, api := range routers {
 		for _, route := range api.Routes() {
 			router.
