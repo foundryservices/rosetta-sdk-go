@@ -20,4 +20,8 @@ package types
 type BlockRequest struct {
 	NetworkIdentifier *NetworkIdentifier      `json:"network_identifier"`
 	BlockIdentifier   *PartialBlockIdentifier `json:"block_identifier"`
+	// Metadata is a Foundry specific field that allows for clients to request for
+	// specific information within a block. Rosetta implementations should ensure that
+	// any special behavior that happens when metadata is supplied is documented.
+	Metadata map[string]interface{} `json:"metadata"`
 }
