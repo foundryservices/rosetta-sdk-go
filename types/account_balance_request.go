@@ -27,4 +27,9 @@ type AccountBalanceRequest struct {
 	// AccountIdentifier. If the currencies field is populated, only balances for the specified
 	// currencies will be returned. If not populated, all available balances will be returned.
 	Currencies []*Currency `json:"currencies,omitempty"`
+	// Metadata is a Foundry specific field that allows for the account balance endpoint
+	// to access the balances of the accounts that have delegated to our validator
+	//Rosetta implementations should ensure that
+	// any special behavior that happens when metadata is supplied is documented.
+	Metadata map[string]interface{} `json:"metadata"`
 }
